@@ -7,128 +7,76 @@
     <link rel="stylesheet" href="index.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* ============================================
-           DARK/LIGHT THEME VARIABLES
-           ============================================ */
-        :root {
-            /* Light Theme (Default) */
-            --bg-primary: #f8f5f0;
-            --bg-secondary: #ffffff;
-            --bg-card: #ffffff;
-            --bg-header: #1a1a2e;
-            --bg-hero: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            --bg-topbar: #2d2d44;
-            --text-primary: #1a1a2e;
-            --text-secondary: #4a4a6a;
-            --text-light: #ffffff;
-            --text-muted: #8888aa;
-            --border-color: #e8e0d8;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-            --shadow-hover: rgba(0, 0, 0, 0.2);
-            --gold: #d4af37;
-            --gold-light: #f5d76e;
-            --gold-dark: #b8860b;
-            --transition: all 0.4s ease;
-            --nav-bg: rgba(26, 26, 46, 0.95);
-            --card-bg: rgba(255, 255, 255, 0.9);
-            --stats-bg: rgba(26, 26, 46, 0.03);
-        }
+<style>
+    /* ============================================
+       DARK/LIGHT THEME VARIABLES ONLY
+       ============================================ */
 
-        /* Dark Theme */
-        [data-theme="dark"] {
-            --bg-primary: #0a0806;
-            --bg-secondary: #1a1512;
-            --bg-card: #1e1916;
-            --bg-header: #0a0806;
-            --bg-hero: linear-gradient(135deg, #0a0806 0%, #1a1512 100%);
-            --bg-topbar: #1a1512;
-            --text-primary: #f5e6c8;
-            --text-secondary: #b8956a;
-            --text-light: #f5e6c8;
-            --text-muted: #8a7a5a;
-            --border-color: #2a2218;
-            --shadow-color: rgba(0, 0, 0, 0.4);
-            --shadow-hover: rgba(0, 0, 0, 0.6);
-            --nav-bg: rgba(10, 8, 6, 0.95);
-            --card-bg: rgba(26, 21, 18, 0.95);
-            --stats-bg: rgba(212, 175, 55, 0.05);
-        }
+    :root {
+        --bg-primary: #0d0b0a;
+        --bg-secondary: #1a1715;
+        --bg-header: #0f0d0b;
+        --bg-hero: linear-gradient(180deg, #0f0d0b, #1a1715);
+        --bg-topbar: linear-gradient(135deg, #1a1715, #0f0d0b);
 
-        /* ============================================
-           THEME TOGGLE BUTTON
-           ============================================ */
-        .theme-toggle {
-            background: rgba(212, 175, 55, 0.15);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            color: var(--gold);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
+        --gold: #d4af37;
+        --gold-light: #e8c94a;
 
-        .theme-toggle:hover {
-            background: rgba(212, 175, 55, 0.25);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
-        }
+        --transition: all 0.4s ease;
+    }
 
-        .theme-toggle i {
-            font-size: 1.1rem;
-        }
+    [data-theme="dark"] {
+        --bg-primary: #0d0b0a;
+        --bg-secondary: #1a1715;
+        --bg-header: #0f0d0b;
+        --bg-hero: linear-gradient(180deg, #0f0d0b, #1a1715);
+        --bg-topbar: linear-gradient(135deg, #1a1715, #0f0d0b);
+    }
 
-        /* Theme transition */
-        body {
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
+    body {
+        transition: background-color .4s ease, color .4s ease;
+    }
 
-        .theme-transition * {
-            transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-        }
+    .theme-transition * {
+        transition: background-color .4s ease,
+                    color .4s ease,
+                    border-color .4s ease,
+                    box-shadow .4s ease;
+    }
 
-        /* Update existing elements for theme compatibility */
-        .top-bar {
-            background: var(--bg-topbar);
-            transition: var(--transition);
-        }
+    .theme-toggle {
+        background: rgba(212,175,55,.15);
+        border:1px solid rgba(212,175,55,.3);
+        color:var(--gold);
+        padding:.5rem 1rem;
+        border-radius:50px;
+        cursor:pointer;
+        display:flex;
+        align-items:center;
+        gap:.5rem;
+        transition:var(--transition);
+    }
 
-        .header {
-            background: var(--bg-header);
-            transition: var(--transition);
-        }
+    .theme-toggle:hover{
+        background:rgba(212,175,55,.25);
+    }
 
-        .hero {
-            background: var(--bg-hero);
-            transition: var(--transition);
-        }
+    .top-bar{
+        background:var(--bg-topbar);
+    }
 
-        .stats {
-            background: var(--stats-bg);
-            transition: var(--transition);
-        }
+    .header{
+        background:var(--bg-header);
+    }
 
-        .stat-item {
-            background: var(--card-bg);
-            transition: var(--transition);
-        }
+    .hero{
+        background:var(--bg-hero);
+    }
 
-        footer {
-            background: var(--bg-header);
-            transition: var(--transition);
-        }
-
-        .footer-section a,
-        .footer-section p,
-        .footer-section h4 {
-            transition: var(--transition);
-        }
-    </style>
+    footer{
+        background:var(--bg-header);
+    }
+</style>
 </head>
 <body>
 
