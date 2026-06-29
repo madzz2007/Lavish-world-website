@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavish World - Ceiling Collection</title>
+    <link rel="stylesheet" href="ceiling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="breadcrumb">
+            <a href="home.html"><i class="fas fa-home"></i> Home</a>
+            <span><i class="fas fa-chevron-right"></i></span>
+            <a href="ceiling.html" class="active">Ceiling</a>
+        </div>
+        <div class="theme-toggle">
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+                <span class="theme-text">Dark</span>
+            </button>
+            <button class="cart-btn" aria-label="View cart" onclick="window.location.href='cart.html'">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </div>
+
+    <button class="cart-btn" style="position: relative; cursor: pointer;" onclick="window.location.href='cart.html'">
+        <i class="fas fa-shopping-cart"></i> Cart 
+        <span id="cartCount" style="background: #d4af37; color: black; border-radius: 50%; padding: 2px 6px; font-size: 0.8rem; position: absolute; top: -5px; right: -5px;">0</span>
+    </button>
+
+    <div class="heading-box">
+        <h1><i class="fas fa-archway"></i> PREMIUM CEILING COLLECTION <i class="fas fa-archway"></i></h1>
+        <p>Transform your space with exquisite ceiling designs</p>
+    </div>
+
+    <div class="products-container">
+        <div class="products">
+
+            <div class="item" data-id="ceiling-1" data-name="Italian Style Ceiling" data-price="14000">
+                <div class="item-image">
+                    <img src="4-ceiling.jpg" alt="Italian Style Ceiling" loading="lazy">
+                    <div class="item-badge">Best Seller</div>
+                    <div class="item-actions">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="item-info">
+                    <h3>Italian Style Ceiling</h3>
+                    <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span>(4.5)</span></div>
+                    <p class="description">Elegant ceiling design with a premium European finish.</p>
+                    <div class="price-row">
+                        <span class="price">₹ 14,000</span>
+                    </div>
+                    <button class="add-to-cart" data-id="ceiling-1">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="item" data-id="ceiling-2" data-name="Spanish Style Ceiling" data-price="18000">
+                <div class="item-image">
+                    <img src="3 ceiling.jpg" alt="Spanish Style Ceiling" loading="lazy">
+                    <div class="item-badge">Premium</div>
+                    <div class="item-actions">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="item-info">
+                    <h3>Spanish Style Ceiling</h3>
+                    <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span>(5.0)</span></div>
+                    <p class="description">Classic artistic design that adds richness and character.</p>
+                    <div class="price-row">
+                        <span class="price">₹ 18,000</span>
+                    </div>
+                    <button class="add-to-cart" data-id="ceiling-2">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="item" data-id="ceiling-3" data-name="Arab Style Ceiling" data-price="10000">
+                <div class="item-image">
+                    <img src="2 ceiling.jpg" alt="Arab Style Ceiling" loading="lazy">
+                    <div class="item-badge">Luxury</div>
+                    <div class="item-actions">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        <button class="quick-view-btn"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="item-info">
+                    <h3>Arab Style Ceiling</h3>
+                    <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><span>(4.0)</span></div>
+                    <p class="description">Traditional luxury ceiling with royal patterns.</p>
+                    <div class="price-row">
+                        <span class="price">₹ 10,000</span>
+                    </div>
+                    <button class="add-to-cart" data-id="ceiling-3">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="quickViewModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image"><img id="modalImage" src="" alt="Product"></div>
+                <div class="modal-details">
+                    <h2 id="modalTitle">Product Name</h2>
+                    <div class="modal-rating"></div>
+                    <p id="modalDescription"></p>
+                    <div class="modal-price"><span id="modalPrice"></span></div>
+                    <div class="modal-features"></div>
+                    <button class="modal-add-to-cart" id="modalAddToCart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"><span class="toast-icon"></span><span class="toast-message"></span></div>
+    
+    <script src="ceiling.js"></script>
+</body>
+</html>

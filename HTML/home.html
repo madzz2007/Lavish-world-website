@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAVISH WORLD - Home</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ============================================
+           DARK/LIGHT THEME VARIABLES
+           ============================================ */
+        :root {
+            /* Light Theme (Default) */
+            --bg-primary: #f8f5f0;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-header: #1a1a2e;
+            --bg-hero: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            --bg-topbar: #2d2d44;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a6a;
+            --text-light: #ffffff;
+            --text-muted: #8888aa;
+            --border-color: #e8e0d8;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --shadow-hover: rgba(0, 0, 0, 0.2);
+            --gold: #d4af37;
+            --gold-light: #f5d76e;
+            --gold-dark: #b8860b;
+            --transition: all 0.4s ease;
+            --nav-bg: rgba(26, 26, 46, 0.95);
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --stats-bg: rgba(26, 26, 46, 0.03);
+        }
+
+        /* Dark Theme */
+        [data-theme="dark"] {
+            --bg-primary: #0a0806;
+            --bg-secondary: #1a1512;
+            --bg-card: #1e1916;
+            --bg-header: #0a0806;
+            --bg-hero: linear-gradient(135deg, #0a0806 0%, #1a1512 100%);
+            --bg-topbar: #1a1512;
+            --text-primary: #f5e6c8;
+            --text-secondary: #b8956a;
+            --text-light: #f5e6c8;
+            --text-muted: #8a7a5a;
+            --border-color: #2a2218;
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            --shadow-hover: rgba(0, 0, 0, 0.6);
+            --nav-bg: rgba(10, 8, 6, 0.95);
+            --card-bg: rgba(26, 21, 18, 0.95);
+            --stats-bg: rgba(212, 175, 55, 0.05);
+        }
+
+        /* ============================================
+           THEME TOGGLE BUTTON
+           ============================================ */
+        .theme-toggle {
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--gold);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(212, 175, 55, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .theme-toggle i {
+            font-size: 1.1rem;
+        }
+
+        /* Theme transition */
+        body {
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .theme-transition * {
+            transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        /* Update existing elements for theme compatibility */
+        .top-bar {
+            background: var(--bg-topbar);
+            transition: var(--transition);
+        }
+
+        .header {
+            background: var(--bg-header);
+            transition: var(--transition);
+        }
+
+        .hero {
+            background: var(--bg-hero);
+            transition: var(--transition);
+        }
+
+        .stats {
+            background: var(--stats-bg);
+            transition: var(--transition);
+        }
+
+        .stat-item {
+            background: var(--card-bg);
+            transition: var(--transition);
+        }
+
+        footer {
+            background: var(--bg-header);
+            transition: var(--transition);
+        }
+
+        .footer-section a,
+        .footer-section p,
+        .footer-section h4 {
+            transition: var(--transition);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP HEADER WITH GREETING -->
+    <div class="top-bar">
+        <div class="greeting">
+            <i class="fas fa-crown"></i>
+            <span id="userGreeting">Welcome to LAVISH WORLD</span>
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="datetime" id="datetime">
+            <i class="far fa-calendar-alt"></i>
+            <span id="currentDate"></span>
+            <i class="far fa-clock"></i>
+            <span id="currentTime"></span>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <div class="header">
+        <div class="logo">
+            <i class="fas fa-gem"></i>
+            LAVISH WORLD
+            <i class="fas fa-gem"></i>
+        </div>
+
+        <nav class="nav-links">
+            <a href="about.html" class="nav-item">
+                <i class="fas fa-info-circle"></i> About us
+            </a>
+            <a href="contact us.html" class="nav-item">
+                <i class="fas fa-envelope"></i> Contact us
+            </a>
+            <a href="branch.html" class="nav-item">
+                <i class="fas fa-store"></i> Branch
+            </a>
+            <!-- Theme Toggle Button (replaces logout) -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon" id="themeIcon"></i>
+                <span id="themeText">Dark</span>
+            </button>
+        </nav>
+
+        <!-- Mobile menu toggle -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>
+                <i class="fas fa-crown"></i>
+                Elevate Your Space
+                <i class="fas fa-crown"></i>
+            </h1>
+            <p>Discover the finest luxury interior designs crafted with elegance</p>
+            <a href="#products" class="hero-btn">
+                <i class="fas fa-arrow-down"></i> Explore Collection
+            </a>
+        </div>
+    </div>
+
+    <!-- PRODUCTS SECTION -->
+    <h2 id="products" class="section-title">
+        <i class="fas fa-star"></i>
+        Our Premium Collection
+        <i class="fas fa-star"></i>
+    </h2>
+
+    <div class="products">
+
+        <div class="item" data-category="lighting">
+            <div class="item-image">
+                <img src="light.webp" alt="Luxury Lights" loading="lazy">
+                <div class="item-overlay">
+                    <span class="item-category">Lighting</span>
+                </div>
+            </div>
+            <div class="item-info">
+                <h3>Lights</h3>
+                <p>Elegant illumination for your space</p>
+                <a href="light.html" class="item-btn">
+                    Explore <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="item" data-category="flooring">
+            <div class="item-image">
+                <img src="lavish-marble-floor-.jpg" alt="Luxury Marble Floor" loading="lazy">
+                <div class="item-overlay">
+                    <span class="item-category">Flooring</span>
+                </div>
+            </div>
+            <div class="item-info">
+                <h3>Floor</h3>
+                <p>Premium marble and wood flooring</p>
+                <a href="floor.html" class="item-btn">
+                    Explore <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="item" data-category="staircase">
+            <div class="item-image">
+                <img src="Modern-Staircase-Design-Ideas.jpg" alt="Modern Staircase" loading="lazy">
+                <div class="item-overlay">
+                    <span class="item-category">Staircase</span>
+                </div>
+            </div>
+            <div class="item-info">
+                <h3>Staircase</h3>
+                <p>Modern and classic staircase designs</p>
+                <a href="staircase.html" class="item-btn">
+                    Explore <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="item" data-category="fireplace">
+            <div class="item-image">
+                <img src="chimneys_.webp" alt="Luxury Chimney" loading="lazy">
+                <div class="item-overlay">
+                    <span class="item-category">Fireplace</span>
+                </div>
+            </div>
+            <div class="item-info">
+                <h3>Chimney</h3>
+                <p>Elegant fireplaces for cozy ambiance</p>
+                <a href="chymini.html" class="item-btn">
+                    Explore <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="item" data-category="ceiling">
+            <div class="item-image">
+                <img src="latest-fall-ceiling-design.jpg" alt="Luxury Ceiling" loading="lazy">
+                <div class="item-overlay">
+                    <span class="item-category">Ceiling</span>
+                </div>
+            </div>
+            <div class="item-info">
+                <h3>Ceiling</h3>
+                <p>Stunning ceiling designs and finishes</p>
+                <a href="ceiling.html" class="item-btn">
+                    Explore <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- STATISTICS SECTION -->
+    <div class="stats">
+        <div class="stat-item">
+            <i class="fas fa-trophy"></i>
+            <span class="stat-number" data-target="15">0</span>
+            <span class="stat-label">Years of Excellence</span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-users"></i>
+            <span class="stat-number" data-target="500">0</span>
+            <span class="stat-label">Happy Clients</span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-project-diagram"></i>
+            <span class="stat-number" data-target="1200">0</span>
+            <span class="stat-label">Projects Completed</span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-award"></i>
+            <span class="stat-number" data-target="25">0</span>
+            <span class="stat-label">Design Awards</span>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <hr>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-gem"></i> LAVISH WORLD</h4>
+                <p>Transforming spaces into luxurious experiences since 2011.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact us.html">Contact</a>
+                <a href="branch.html">Branches</a>
+                <a href="#products">Collection</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-envelope"></i> info@lavishworld.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Luxury Ave, NY</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lavish Interior. All Rights Reserved.</p>
+            <p class="tagline">Designed with elegance & luxury ✨</p>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================ -->
+    <!-- EXTERNAL JAVASCRIPT - SEPARATED -->
+    <!-- ============================================ -->
+    <script src="home.js"></script>
+    
+</body>
+</html>

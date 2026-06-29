@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAVISH PAGE - Golden Edition</title>
+    <link rel="icon" href="interior-design.png">
+    <link rel="stylesheet" href="../css/clg.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>
+            <i class="fas fa-crown"></i>
+            ACTIVATE YOUR LAVISH WORLD
+            <i class="fas fa-crown"></i>
+        </h1>
+        <h3>
+            <i class="fas fa-lock"></i>
+            LOGIN
+            <i class="fas fa-lock"></i>
+        </h3>
+
+        <form id="lavishForm" action="home.html" method="get">
+            <div class="input-group">
+                <label for="fullName">
+                    <i class="fas fa-user"></i> NAME:
+                </label>
+                <input
+                    id="fullName"
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                    autocomplete="name">
+            </div>
+
+            <div class="input-group">
+                <label for="emailAddr">
+                    <i class="fas fa-envelope"></i> EMAIL:
+                </label>
+                <input
+                    id="emailAddr"
+                    type="email"
+                    placeholder="Enter your e-mail"
+                    required
+                    autocomplete="email">
+            </div>
+
+            <div class="input-group password-group">
+                <label for="pwd">
+                    <i class="fas fa-key"></i> PASSWORD:
+                </label>
+                <div class="password-wrapper">
+                    <input
+                        id="pwd"
+                        type="password"
+                        placeholder="Enter your password"
+                        required
+                        autocomplete="current-password">
+                    <button type="button" class="toggle-password" id="togglePassword">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+                <div class="password-strength">
+                    <span id="strengthText">Password strength: </span>
+                    <div class="strength-bar">
+                        <div id="strengthBar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" id="confirmBtn">
+                <i class="fas fa-check-circle"></i>
+                Confirm
+            </button>
+        </form>
+
+        <div id="welcomeMessage" class="welcome-box">
+            <i class="fas fa-sparkles"></i>
+            HEY BUDDY! WELCOME TO THE LAVISH WORLD
+            <i class="fas fa-sparkles"></i>
+        </div>
+
+        <footer>
+            <hr>
+            <p>
+                <i class="fas fa-copyright"></i> 2026 Lavish Interior. All Rights Reserved.
+            </p>
+            <p class="tagline">
+                <i class="fas fa-gem"></i>
+                Designed with elegance & luxury ✨
+                <i class="fas fa-gem"></i>
+            </p>
+        </footer>
+    </div>
+
+<script src="project.js"></script>
+</body>
+</html> 

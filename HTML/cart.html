@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Staircase Golden Edition</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #ffffff;
+            --accent-color: #d4af37; /* Gold */
+            --border-color: #333333;
+        }
+
+        /* Simple setup matching a sleek Dark Theme */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .cart-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-top: 0;
+        }
+
+        h1 i {
+            margin-right: 10px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .item-details h3 {
+            margin: 0 0 5px 0;
+            color: #fff;
+        }
+
+        .item-details p {
+            margin: 0;
+            color: #888;
+        }
+
+        .item-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .quantity-btn {
+            background: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 5px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background: var(--accent-color);
+            color: #000;
+        }
+
+        .quantity-btn:active {
+            transform: scale(0.95);
+        }
+
+        .item-total {
+            color: var(--accent-color);
+            font-weight: bold;
+            min-width: 80px;
+            text-align: right;
+        }
+
+        .remove-btn {
+            background: #e74c3c;
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .remove-btn:hover {
+            background: #c0392b;
+            transform: scale(1.05);
+        }
+
+        .cart-summary {
+            margin-top: 30px;
+            text-align: right;
+            font-size: 1.2rem;
+            padding-top: 20px;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .total-price {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.8rem;
+            margin-left: 10px;
+        }
+
+        .btn-group {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-back {
+            background: transparent;
+            border: 1px solid #444;
+            color: #aaa;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-back:hover {
+            border-color: var(--accent-color);
+            color: #fff;
+        }
+
+        .btn-checkout {
+            background: var(--accent-color);
+            color: #000;
+            border: none;
+            padding: 12px 30px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .btn-checkout:hover {
+            background: #bfa030;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-checkout:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .empty-message {
+            text-align: center;
+            padding: 40px 0;
+            color: #888;
+        }
+
+        .empty-message h3 {
+            color: #aaa;
+        }
+
+        .empty-message i {
+            font-size: 4rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 8px;
+            border: 1px solid var(--accent-color);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 999;
+            max-width: 400px;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast.success {
+            border-color: #4ade80;
+        }
+
+        .toast.error {
+            border-color: #e74c3c;
+        }
+
+        .toast i {
+            margin-right: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cart-container {
+                padding: 20px;
+            }
+            .cart-item {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .item-actions {
+                justify-content: flex-start;
+            }
+            .btn-group {
+                flex-direction: column;
+            }
+            .btn-back, .btn-checkout {
+                width: 100%;
+                justify-content: center;
+            }
+            .cart-summary {
+                text-align: center;
+            }
+            .total-price {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .cart-container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .item-actions {
+                gap: 10px;
+            }
+            .quantity-btn {
+                padding: 4px 10px;
+                font-size: 14px;
+            }
+            .remove-btn {
+                padding: 6px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cart-container">
+    <h1><i class="fas fa-shopping-cart"></i> Your Staircase Cart</h1>
+    
+    <div id="cartItemsList"></div>
+
+    <div class="cart-summary">
+        <span>Total:</span>
+        <span id="cartTotalPrice" class="total-price">₹0</span>
+    </div>
+
+    <div class="btn-group">
+        <a href="home.html" class="btn-back"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+        <button class="btn-checkout" id="checkoutBtn" onclick="proceedToCheckout()">
+            <i class="fas fa-lock"></i> Checkout Now
+        </button>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="toast" id="toast">
+    <i class="fas fa-info-circle"></i>
+    <span id="toastMessage">Loading...</span>
+</div>
+
+<script>
+    "use strict";
+
+    // ============================================
+    // CART DATA
+    // ============================================
+    let cartItems = JSON.parse(localStorage.getItem('staircaseCart') || '[]');
+
+    const itemsListContainer = document.getElementById('cartItemsList');
+    const totalPriceElement = document.getElementById('cartTotalPrice');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+
+    // ============================================
+    // RENDER CART
+    // ============================================
+    function renderCart() {
+        if (cartItems.length === 0) {
+            itemsListContainer.innerHTML = `
+                <div class="empty-message">
+                    <i class="fas fa-shopping-bag"></i>
+                    <h3>Your cart is empty.</h3>
+                    <p>Browse our Golden Edition collections to add premium staircases.</p>
+                </div>
+            `;
+            totalPriceElement.textContent = '₹0';
+            checkoutBtn.disabled = true;
+            checkoutBtn.innerHTML = '<i class="fas fa-lock"></i> Cart Empty';
+            return;
+        }
+
+        itemsListContainer.innerHTML = '';
+        let grandTotal = 0;
+
+        cartItems.forEach((item, index) => {
+            const itemTotal = item.price * item.quantity;
+            grandTotal += itemTotal;
+
+            const itemRow = document.createElement('div');
+            itemRow.className = 'cart-item';
+            itemRow.innerHTML = `
+                <div class="item-details">
+                    <h3>${item.name}</h3>
+                    <p>Price per unit: ₹${item.price.toLocaleString()}</p>
+                </div>
+                <div class="item-actions">
+                    <button class="quantity-btn" onclick="changeQuantity('${item.id}', -1)" title="Decrease quantity">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <span><strong>${item.quantity}</strong></span>
+                    <button class="quantity-btn" onclick="changeQuantity('${item.id}', 1)" title="Increase quantity">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <span class="item-total">₹${itemTotal.toLocaleString()}</span>
+                    <button class="remove-btn" onclick="removeItem('${item.id}')" title="Remove item">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `;
+            itemsListContainer.appendChild(itemRow);
+        });
+
+        totalPriceElement.textContent = `₹${grandTotal.toLocaleString()}`;
+        checkoutBtn.disabled = false;
+        checkoutBtn.innerHTML = '<i class="fas fa-lock"></i> Checkout Now';
+    }
+
+    // ============================================
+    // CART OPERATIONS
+    // ============================================
+    window.changeQuantity = function(id, amount) {
+        const item = cartItems.find(i => i.id === id);
+        if (item) {
+            item.quantity += amount;
+            if (item.quantity <= 0) {
+                removeItem(id);
+                return;
+            }
+            saveAndRefresh();
+        }
+    };
+
+    window.removeItem = function(id) {
+        cartItems = cartItems.filter(i => i.id !== id);
+        saveAndRefresh();
+    };
+
+    function saveAndRefresh() {
+        localStorage.setItem('staircaseCart', JSON.stringify(cartItems));
+        renderCart();
+    }
+
+    // ============================================
+    // CHECKOUT - NAVIGATE TO PAYMENT
+    // ============================================
+    function proceedToCheckout() {
+        if (cartItems.length === 0) {
+            showToast('Your cart is empty! Please add items to checkout.', 'error');
+            return;
+        }
+
+        // Calculate total
+        let grandTotal = 0;
+        cartItems.forEach(item => {
+            grandTotal += item.price * item.quantity;
+        });
+
+        // Save total to localStorage for payment page
+        localStorage.setItem('checkoutTotal', grandTotal);
+        localStorage.setItem('checkoutItems', JSON.stringify(cartItems));
+
+        // Show loading toast
+        showToast('⏳ Redirecting to secure payment...', 'success');
+
+        // Redirect to payment page after short delay
+        setTimeout(() => {
+            window.location.href = 'payment.html?method=upi&amount=' + grandTotal;
+        }, 800);
+    }
+
+    // ============================================
+    // TOAST NOTIFICATION
+    // ============================================
+    function showToast(message, type = 'success') {
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+        
+        toastMessage.textContent = message;
+        toast.className = 'toast';
+        toast.classList.add('show', type);
+        
+        // Set icon based on type
+        const icon = toast.querySelector('i');
+        if (type === 'success') {
+            icon.className = 'fas fa-check-circle';
+        } else if (type === 'error') {
+            icon.className = 'fas fa-exclamation-circle';
+        } else {
+            icon.className = 'fas fa-info-circle';
+        }
+        
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+
+    // ============================================
+    // INITIAL RENDER
+    // ============================================
+    document.addEventListener('DOMContentLoaded', renderCart);
+
+    // ============================================
+    // KEYBOARD SHORTCUTS
+    // ============================================
+    document.addEventListener('keydown', function(e) {
+        // Press 'C' to checkout
+        if (e.key === 'c' || e.key === 'C') {
+            if (!e.ctrlKey && !e.metaKey) {
+                e.preventDefault();
+                proceedToCheckout();
+            }
+        }
+        // Press 'Escape' to go back
+        if (e.key === 'Escape') {
+            window.location.href = 'Home.HTML';
+        }
+    });
+
+    console.log('🛒 Cart loaded successfully!');
+    console.log('📌 Press "C" to checkout, "Esc" to go back');
+    console.log('📦 Items in cart:', cartItems.length);
+</script>
+
+</body>
+</html>

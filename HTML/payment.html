@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhesh | Premium Payment</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           GOLDEN THEME - Premium Luxury Design
+           ============================================ */
+        
+        /* Override body background */
+        body {
+            background: #0a0806;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(10, 8, 6, 1) 0%, #0a0806 100%);
+            min-height: 100vh;
+        }
+
+        /* Navigation - Gold Glass */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+            padding: 1rem 1.5rem;
+            background: rgba(10, 8, 6, 0.8);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.05);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.8rem;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #d4af37, #f5d76e, #d4af37, #f9e79f);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: goldShimmer 4s linear infinite;
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
+        }
+
+        @keyframes goldShimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #b8956a;
+            transition: all 0.25s ease;
+            padding: 0.5rem 0;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #d4af37, #f5d76e);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #f5d76e;
+        }
+
+        /* Section Title - Gold */
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #f9e79f, #d4af37, #f5d76e, #b8860b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 60px rgba(212, 175, 55, 0.1);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 60%;
+            background: linear-gradient(180deg, #d4af37, #f5d76e);
+            border-radius: 4px;
+        }
+
+        .payment-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Payment Summary - Gold Card */
+        .payment-summary {
+            background: linear-gradient(145deg, rgba(20, 16, 12, 0.95), rgba(10, 8, 6, 0.95));
+            backdrop-filter: blur(12px);
+            border-radius: 1.8rem;
+            padding: 2.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(212, 175, 55, 0.1),
+                0 0 40px rgba(212, 175, 55, 0.03);
+            height: fit-content;
+            position: sticky;
+            top: 2rem;
+            position: relative;
+        }
+
+        .payment-summary::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, #f5d76e, #d4af37, transparent);
+            border-radius: 1.8rem 1.8rem 0 0;
+        }
+
+        .payment-summary h3 {
+            color: #f9e79f;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-summary .amount {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f9e79f, #d4af37, #f5d76e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 1rem 0;
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+            letter-spacing: -1px;
+        }
+
+        .payment-summary .item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+            color: #b8956a;
+            font-size: 0.95rem;
+        }
+
+        .payment-summary .item:last-child {
+            border-bottom: none;
+        }
+
+        .payment-summary .total {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #f9e79f;
+            padding-top: 1rem;
+            border-top: 2px solid rgba(212, 175, 55, 0.2);
+            margin-top: 0.5rem;
+        }
+
+        .payment-summary .total span {
+            float: right;
+            background: linear-gradient(135deg, #f9e79f, #d4af37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gold-accent {
+            display: inline-block;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), rgba(245, 215, 110, 0.5), rgba(212, 175, 55, 0.3), transparent);
+            margin: 0.5rem 0;
+        }
+
+        .security-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0.5rem;
+            color: #8a7a5a;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.08);
+            margin-top: 1rem;
+            padding-top: 1rem;
+        }
+
+        .security-badge span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Payment Methods - Gold Theme */
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .payment-method {
+            background: linear-gradient(145deg, rgba(20, 16, 12, 0.85), rgba(10, 8, 6, 0.85));
+            backdrop-filter: blur(8px);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.12);
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .payment-method::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .payment-method:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateX(8px);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .payment-method:hover::before {
+            opacity: 1;
+        }
+
+        .payment-method.active {
+            border-color: #d4af37;
+            background: linear-gradient(145deg, rgba(212, 175, 55, 0.12), rgba(20, 16, 12, 0.9));
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.06), inset 0 0 30px rgba(212, 175, 55, 0.02);
+        }
+
+        .payment-method.active::before {
+            opacity: 1;
+            background: linear-gradient(90deg, transparent, #d4af37, #f5d76e, #d4af37, transparent);
+        }
+
+        .payment-method-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .payment-method-header .icon {
+            font-size: 1.8rem;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.08);
+            border-radius: 1rem;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .payment-method.active .icon {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .payment-method-header .name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f9e79f;
+            letter-spacing: 0.3px;
+        }
+
+        .payment-method-header .radio {
+            margin-left: auto;
+            width: 1.4rem;
+            height: 1.4rem;
+            border-radius: 50%;
+            border: 2px solid #4a3a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .payment-method.active .radio {
+            border-color: #d4af37;
+            background: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .payment-method.active .radio::after {
+            content: '✓';
+            color: #0a0806;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .payment-method-desc {
+            color: #8a7a5a;
+            font-size: 0.85rem;
+            margin-left: 4rem;
+            margin-top: 0.1rem;
+        }
+
+        /* Payment Form - Gold Style */
+        .payment-form {
+            display: none;
+            margin-top: 1.2rem;
+            padding: 1.5rem;
+            background: rgba(10, 8, 6, 0.6);
+            border-radius: 1rem;
+            border: 1px solid rgba(212, 175, 55, 0.08);
+        }
+
+        .payment-form.active {
+            display: block;
+            animation: goldFadeIn 0.4s ease;
+        }
+
+        @keyframes goldFadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(-15px) scale(0.98);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+            color: #b8956a;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(10, 8, 6, 0.8);
+            border: 1.5px solid #2a2218;
+            border-radius: 0.8rem;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: #f5e6c8;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1), 0 0 20px rgba(212, 175, 55, 0.05);
+            background: rgba(10, 8, 6, 0.9);
+        }
+
+        .form-group input::placeholder {
+            color: #4a3a2a;
+        }
+
+        .form-group select {
+            color: #b8956a;
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: #0a0806;
+            color: #f5e6c8;
+        }
+
+        .card-icons {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .card-icons span {
+            font-size: 1.5rem;
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+        }
+
+        .card-icons span.active {
+            opacity: 1;
+        }
+
+        /* Pay Button - Golden */
+        .pay-btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #d4af37, #f5d76e, #d4af37);
+            background-size: 200% auto;
+            color: #0a0806;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: inherit;
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pay-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .pay-btn:hover::before {
+            left: 100%;
+        }
+
+        .pay-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 10px 40px rgba(212, 175, 55, 0.3),
+                0 0 60px rgba(212, 175, 55, 0.1);
+            background-position: right center;
+        }
+
+        .pay-btn:active {
+            transform: scale(0.98);
+        }
+
+        .pay-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* UPI QR - Gold */
+        .upi-qr {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .upi-qr .qr-placeholder {
+            width: 180px;
+            height: 180px;
+            margin: 1rem auto;
+            background: rgba(10, 8, 6, 0.8);
+            border-radius: 1rem;
+            border: 2px dashed rgba(212, 175, 55, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #4a3a2a;
+            transition: all 0.3s ease;
+        }
+
+        .upi-qr .qr-placeholder:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.05);
+        }
+
+        .upi-qr .qr-placeholder span {
+            font-size: 0.8rem;
+            color: #8a7a5a;
+            margin-top: 0.5rem;
+        }
+
+        .upi-id {
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #f9e79f, #d4af37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            padding: 0.5rem 1.5rem;
+            background-color: rgba(10, 8, 6, 0.6);
+            border-radius: 0.5rem;
+            display: inline-block;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .upi-id:hover {
+            background-color: rgba(212, 175, 55, 0.08);
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.05);
+        }
+
+        .copy-feedback {
+            font-size: 0.8rem;
+            color: #f5d76e;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .copy-feedback.show {
+            display: block;
+            animation: goldFadeIn 0.3s ease;
+        }
+
+        /* Toast - Gold */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1.2rem 2rem;
+            background: linear-gradient(145deg, rgba(20, 16, 12, 0.98), rgba(10, 8, 6, 0.98));
+            backdrop-filter: blur(12px);
+            border-radius: 1rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: #f9e79f;
+            font-weight: 500;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.7),
+                0 0 40px rgba(212, 175, 55, 0.05);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            z-index: 999;
+            max-width: 400px;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast.success {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(212, 175, 55, 0.1);
+        }
+
+        .toast.error {
+            border-color: rgba(239, 68, 68, 0.4);
+        }
+
+        /* Footer - Gold */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            color: #4a3a2a;
+            margin-top: 4rem;
+            font-size: 0.85rem;
+            background: rgba(10, 8, 6, 0.3);
+            border-radius: 2rem;
+        }
+
+        /* Scrollbar - Gold */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0806;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #d4af37, #f5d76e);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f5d76e;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .payment-container {
+                grid-template-columns: 1fr;
+            }
+            .payment-summary {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .payment-summary .amount {
+                font-size: 2.5rem;
+            }
+            .payment-method-desc {
+                margin-left: 0;
+            }
+            nav {
+                flex-direction: column;
+                text-align: center;
+                border-radius: 1.5rem;
+                padding: 1rem;
+            }
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .payment-summary {
+                padding: 1.5rem;
+            }
+            .payment-summary .amount {
+                font-size: 2rem;
+            }
+            .toast {
+                left: 1rem;
+                right: 1rem;
+                bottom: 1rem;
+                max-width: none;
+                font-size: 0.9rem;
+                padding: 0.8rem 1.2rem;
+            }
+            .payment-method {
+                padding: 1rem;
+            }
+            .payment-method-header .icon {
+                width: 2.5rem;
+                height: 2.5rem;
+                font-size: 1.5rem;
+            }
+            .upi-qr .qr-placeholder {
+                width: 140px;
+                height: 140px;
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+      
+           
+            </div>
+        </nav>
+
+        <section>
+            <div class="section-title">✦ Payment Portal</div>
+            <p style="color: #8a7a5a; margin-bottom: 2rem; max-width: 700px; font-size: 1.05rem;">
+                Secure luxury payment gateway with multiple premium options. Choose your preferred method and complete your transaction.
+            </p>
+
+            <div class="payment-container">
+                <!-- Left: Payment Summary -->
+                <div class="payment-summary">
+                    <h3>✦ Order Summary</h3>
+                    <div class="gold-accent"></div>
+                    
+                    <!-- Dynamic Amount Display -->
+                    <div class="amount" id="displayAmount">₹0</div>
+                    
+                    <div id="orderItems">
+                        <!-- Items will be dynamically inserted here -->
+                    </div>
+                    
+                    <div class="gold-accent"></div>
+                    <div class="total">
+                        Total Amount
+                        <span id="totalAmount">₹0</span>
+                    </div>
+
+                    <div class="security-badge">
+                        <span>🔒 Secured</span>
+                        <span>✦</span>
+                        <span>🔐 256-bit SSL</span>
+                        <span>✦</span>
+                        <span>⭐ Premium</span>
+                    </div>
+                </div>
+
+                <!-- Right: Payment Methods -->
+                <div class="payment-methods">
+                    <!-- Credit/Debit Card -->
+                    <div class="payment-method active" data-method="card" onclick="selectMethod('card')">
+                        <div class="payment-method-header">
+                            <div class="icon">💳</div>
+                            <div class="name">Credit / Debit Card</div>
+                            <div class="radio"></div>
+                        </div>
+                        <div class="payment-method-desc">Premium card payments with 3D Secure</div>
+                        
+                        <div class="payment-form active" id="cardForm">
+                            <div class="form-group full">
+                                <label>Card Number</label>
+                                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                                <div class="card-icons">
+                                    <span>💳</span>
+                                    <span>🏦</span>
+                                    <span>💎</span>
+                                    <span>✦</span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Expiry Date</label>
+                                    <input type="text" id="expiry" placeholder="MM/YY" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label>CVV</label>
+                                    <input type="password" id="cvv" placeholder="***" maxlength="4">
+                                </div>
+                            </div>
+                            <div class="form-group full">
+                                <label>Cardholder Name</label>
+                                <input type="text" id="cardName" placeholder="John Doe">
+                            </div>
+                            <button class="pay-btn" id="cardPayBtn" onclick="processPayment('card')">✦ Pay ₹0</button>
+                        </div>
+                    </div>
+
+                    <!-- UPI -->
+                    <div class="payment-method" data-method="upi" onclick="selectMethod('upi')">
+                        <div class="payment-method-header">
+                            <div class="icon">📱</div>
+                            <div class="name">UPI</div>
+                            <div class="radio"></div>
+                        </div>
+                        <div class="payment-method-desc">Google Pay, PhonePe, Paytm & more</div>
+                        
+                        <div class="payment-form" id="upiForm">
+                            <div class="form-group full">
+                                <label>UPI ID</label>
+                                <input type="text" id="upiId" placeholder="yourname@upi" value="madhesh@paytm">
+                            </div>
+                            <div class="upi-qr">
+                                <div class="qr-placeholder">
+                                    ✦
+                                    <span>Scan to Pay</span>
+                                </div>
+                                <p style="color: #8a7a5a; font-size: 0.85rem; margin: 0.5rem 0;">or use UPI ID</p>
+                                <div class="upi-id" onclick="copyUPI()">madhesh@paytm</div>
+                                <div class="copy-feedback" id="copyFeedback">✦ Copied to clipboard!</div>
+                            </div>
+                            <button class="pay-btn" id="upiPayBtn" onclick="processPayment('upi')">✦ Pay ₹0 via UPI</button>
+                        </div>
+                    </div>
+
+                    <!-- Net Banking -->
+                    <div class="payment-method" data-method="bank" onclick="selectMethod('bank')">
+                        <div class="payment-method-header">
+                            <div class="icon">🏛️</div>
+                            <div class="name">Net Banking</div>
+                            <div class="radio"></div>
+                        </div>
+                        <div class="payment-method-desc">All premium banks supported</div>
+                        
+                        <div class="payment-form" id="bankForm">
+                            <div class="form-group full">
+                                <label>Select Bank</label>
+                                <select id="bankSelect">
+                                    <option value="">Choose your bank</option>
+                                    <option value="sbi">State Bank of India</option>
+                                    <option value="hdfc">HDFC Bank</option>
+                                    <option value="icici">ICICI Bank</option>
+                                    <option value="axis">Axis Bank</option>
+                                    <option value="kotak">Kotak Mahindra Bank</option>
+                                    <option value="yes">Yes Bank</option>
+                                    <option value="other">Other Bank</option>
+                                </select>
+                            </div>
+                            <button class="pay-btn" id="bankPayBtn" onclick="processPayment('bank')">✦ Pay ₹0 via Net Banking</button>
+                        </div>
+                    </div>
+
+                    <!-- PayPal -->
+                    <div class="payment-method" data-method="paypal" onclick="selectMethod('paypal')">
+                        <div class="payment-method-header">
+                            <div class="icon">🟦</div>
+                            <div class="name">PayPal</div>
+                            <div class="radio"></div>
+                        </div>
+                        <div class="payment-method-desc">Pay with your PayPal account</div>
+                        
+                        <div class="payment-form" id="paypalForm">
+                            <div class="form-group full">
+                                <label>Email Address</label>
+                                <input type="email" id="paypalEmail" placeholder="your@email.com">
+                            </div>
+                            <button class="pay-btn" id="paypalPayBtn" onclick="processPayment('paypal')">✦ Pay ₹0 via PayPal</button>
+                        </div>
+                    </div>
+
+                    <!-- Cryptocurrency -->
+                    <div class="payment-method" data-method="crypto" onclick="selectMethod('crypto')">
+                        <div class="payment-method-header">
+                            <div class="icon">₿</div>
+                            <div class="name">Cryptocurrency</div>
+                            <div class="radio"></div>
+                        </div>
+                        <div class="payment-method-desc">Bitcoin, Ethereum & more</div>
+                        
+                        <div class="payment-form" id="cryptoForm">
+                            <div class="form-group full">
+                                <label>Select Cryptocurrency</label>
+                                <select id="cryptoSelect">
+                                    <option value="">Choose coin</option>
+                                    <option value="btc">Bitcoin (BTC)</option>
+                                    <option value="eth">Ethereum (ETH)</option>
+                                    <option value="usdt">Tether (USDT)</option>
+                                    <option value="sol">Solana (SOL)</option>
+                                </select>
+                            </div>
+                            <div class="upi-qr">
+                                <div class="qr-placeholder">
+                                    ₿
+                                    <span>Wallet Address</span>
+                                </div>
+                                <p style="color: #8a7a5a; font-size: 0.8rem; margin: 0.5rem 0; word-break: break-all;">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</p>
+                            </div>
+                            <button class="pay-btn" id="cryptoPayBtn" onclick="processPayment('crypto')">✦ Pay ₹0 via Crypto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p style="color: #8a7a5a;">© 2025 Madhesh — ✦ Premium Secure Payment Gateway</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // ============================================
+        // LOAD CART DATA FROM LOCALSTORAGE
+        // ============================================
+        let totalAmount = 0;
+        let cartItems = [];
+
+        function loadCartData() {
+            // Get total from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const amountParam = urlParams.get('amount');
+            
+            // Get items from localStorage
+            const savedItems = localStorage.getItem('checkoutItems');
+            const savedTotal = localStorage.getItem('checkoutTotal');
+
+            if (savedItems) {
+                try {
+                    cartItems = JSON.parse(savedItems);
+                } catch (e) {
+                    cartItems = [];
+                }
+            }
+
+            // Set total amount (priority: URL param > localStorage > default)
+            if (amountParam && !isNaN(amountParam)) {
+                totalAmount = parseFloat(amountParam);
+            } else if (savedTotal && !isNaN(savedTotal)) {
+                totalAmount = parseFloat(savedTotal);
+            } else if (cartItems.length > 0) {
+                // Calculate from items
+                cartItems.forEach(item => {
+                    totalAmount += item.price * item.quantity;
+                });
+            } else {
+                totalAmount = 2499; // Default fallback
+            }
+
+            // Update UI
+            updateUI();
+        }
+
+        function updateUI() {
+            // Update amount display
+            const formattedAmount = '₹' + totalAmount.toLocaleString('en-IN', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+            
+            document.getElementById('displayAmount').textContent = formattedAmount;
+            document.getElementById('totalAmount').textContent = formattedAmount;
+
+            // Update all pay buttons
+            const payButtons = document.querySelectorAll('.pay-btn');
+            payButtons.forEach(btn => {
+                const text = btn.textContent.replace(/₹[\d,]+/, formattedAmount);
+                btn.textContent = text;
+            });
+
+            // Update order items
+            const orderItemsContainer = document.getElementById('orderItems');
+            if (cartItems.length > 0) {
+                let itemsHtml = '';
+                cartItems.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    itemsHtml += `
+                        <div class="item">
+                            <span>${item.name} × ${item.quantity}</span>
+                            <span>₹${itemTotal.toLocaleString()}</span>
+                        </div>
+                    `;
+                });
+                orderItemsContainer.innerHTML = itemsHtml;
+            } else {
+                orderItemsContainer.innerHTML = `
+                    <div class="item">
+                        <span>Premium Package</span>
+                        <span>${formattedAmount}</span>
+                    </div>
+                `;
+            }
+        }
+
+        // ============================================
+        // PAYMENT METHOD SELECTION
+        // ============================================
+        function selectMethod(method) {
+            // Remove active class from all methods
+            document.querySelectorAll('.payment-method').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Hide all forms
+            document.querySelectorAll('.payment-form').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Activate selected method
+            const selected = document.querySelector(`[data-method="${method}"]`);
+            if (selected) {
+                selected.classList.add('active');
+                const form = document.getElementById(`${method}Form`);
+                if (form) {
+                    form.classList.add('active');
+                }
+            }
+        }
+
+        // ============================================
+        // CARD INPUT FORMATTING
+        // ============================================
+        document.getElementById('cardNumber')?.addEventListener('input', function(e) {
+            let value = this.value.replace(/\D/g, '');
+            value = value.replace(/(\d{4})/g, '$1 ').trim();
+            this.value = value;
+        });
+
+        document.getElementById('expiry')?.addEventListener('input', function(e) {
+            let value = this.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2);
+            }
+            this.value = value;
+        });
+
+        document.getElementById('cvv')?.addEventListener('input', function(e) {
+            this.value = this.value.replace(/\D/g, '');
+        });
+
+        // ============================================
+        // COPY UPI ID
+        // ============================================
+        function copyUPI() {
+            const upiId = document.querySelector('.upi-id');
+            const text = upiId.textContent.trim();
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const feedback = document.getElementById('copyFeedback');
+                feedback.classList.add('show');
+                setTimeout(() => {
+                    feedback.classList.remove('show');
+                }, 2000);
+            }).catch(() => {
+                // Fallback
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                textarea.remove();
+                
+                const feedback = document.getElementById('copyFeedback');
+                feedback.classList.add('show');
+                setTimeout(() => {
+                    feedback.classList.remove('show');
+                }, 2000);
+            });
+        }
+
+        // ============================================
+        // PROCESS PAYMENT
+        // ============================================
+        function processPayment(method) {
+            const toast = document.getElementById('toast');
+            const payBtn = document.querySelector(`[data-method="${method}"] .pay-btn`);
+            
+            // Disable button
+            if (payBtn) {
+                payBtn.disabled = true;
+                payBtn.textContent = '⏳ Processing...';
+            }
+
+            // Simulate payment processing
+            setTimeout(() => {
+                // Re-enable button
+                if (payBtn) {
+                    payBtn.disabled = false;
+                    const formattedAmount = '₹' + totalAmount.toLocaleString('en-IN', {
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0
+                    });
+                    const methodNames = {
+                        'card': '✦ Pay ' + formattedAmount,
+                        'upi': '✦ Pay ' + formattedAmount + ' via UPI',
+                        'bank': '✦ Pay ' + formattedAmount + ' via Net Banking',
+                        'paypal': '✦ Pay ' + formattedAmount + ' via PayPal',
+                        'crypto': '✦ Pay ' + formattedAmount + ' via Crypto'
+                    };
+                    payBtn.textContent = methodNames[method] || '✦ Pay ' + formattedAmount;
+                }
+
+                // Show success toast
+                showToast('✦ Payment Successful! Thank you for your premium purchase. You will receive a confirmation email shortly.', 'success');
+                
+                // Clear cart after payment
+                localStorage.removeItem('staircaseCart');
+                localStorage.removeItem('checkoutItems');
+                localStorage.removeItem('checkoutTotal');
+                
+            }, 2500);
+        }
+
+        // ============================================
+        // TOAST NOTIFICATION
+        // ============================================
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast';
+            toast.classList.add('show', type);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4500);
+        }
+
+        // ============================================
+        // KEYBOARD SHORTCUTS
+        // ============================================
+        document.addEventListener('keydown', function(e) {
+            const methods = {
+                '1': 'card',
+                '2': 'upi',
+                '3': 'bank',
+                '4': 'paypal',
+                '5': 'crypto'
+            };
+            if (e.key in methods) {
+                selectMethod(methods[e.key]);
+            }
+            
+            if (e.key === 'Enter' && e.target.closest('.payment-form')) {
+                const activeMethod = document.querySelector('.payment-method.active');
+                if (activeMethod) {
+                    const method = activeMethod.dataset.method;
+                    processPayment(method);
+                }
+            }
+        });
+
+        // ============================================
+        // INITIALIZE
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCartData();
+            
+            // Auto-select method from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const methodParam = urlParams.get('method');
+            if (methodParam && ['card', 'upi', 'bank', 'paypal', 'crypto'].includes(methodParam)) {
+                selectMethod(methodParam);
+            }
+
+            console.log('✦ Premium Payment Portal Loaded');
+            console.log('💰 Total Amount: ₹' + totalAmount);
+            console.log('📦 Items:', cartItems);
+            console.log('📌 Shortcuts: 1=Card, 2=UPI, 3=Bank, 4=PayPal, 5=Crypto');
+        });
+    </script>
+</body>
+</html>

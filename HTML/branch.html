@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavish World - Our Branches</title>
+    <link rel="stylesheet" href="branch.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="breadcrumb">
+            <a href="home.html"><i class="fas fa-home"></i> Home</a>
+            <span><i class="fas fa-chevron-right"></i></span>
+            <a href="branch.html" class="active">Branches</a>
+        </div>
+        <div class="theme-toggle">
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+                <span class="theme-text">Dark</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>
+                <i class="fas fa-store"></i>
+                Our Branches
+                <i class="fas fa-store"></i>
+            </h1>
+            <p>Find us at a location near you</p>
+        </div>
+    </div>
+
+    <!-- BRANCHES SECTION -->
+    <div class="branches-container">
+        
+        <!-- Branch 1: Chennai -->
+        <div class="branch-card">
+            <div class="branch-icon">
+                <i class="fas fa-building"></i>
+            </div>
+            <div class="branch-info">
+                <h3><i class="fas fa-map-pin"></i> Chennai</h3>
+                <p class="branch-type">🏢 Head Office</p>
+                <p class="branch-address">
+                    <i class="fas fa-location-dot"></i> Nanganallur, Chennai - 600061
+                </p>
+                <p class="branch-phone">
+                    <i class="fas fa-phone"></i> +91 91765 74702
+                </p>
+                <p class="branch-email">
+                    <i class="fas fa-envelope"></i> chennai@lavishworld.com
+                </p>
+                <div class="branch-tags">
+                    <span class="tag">⭐ Headquarters</span>
+                    <span class="tag">📍 Showroom</span>
+                </div>
+                <button class="branch-btn" onclick="showBranchDetails('Chennai', 'Head Office', 'Nanganallur, Chennai - 600061', '+91 91765 74702', 'chennai@lavishworld.com')">
+                    <i class="fas fa-info-circle"></i> View Details
+                </button>
+            </div>
+        </div>
+
+        <!-- Branch 2: Bangalore -->
+        <div class="branch-card">
+            <div class="branch-icon">
+                <i class="fas fa-city"></i>
+            </div>
+            <div class="branch-info">
+                <h3><i class="fas fa-map-pin"></i> Bangalore</h3>
+                <p class="branch-type">🏗️ Commercial Projects Division</p>
+                <p class="branch-address">
+                    <i class="fas fa-location-dot"></i> MG Road, Bangalore - 560001
+                </p>
+                <p class="branch-phone">
+                    <i class="fas fa-phone"></i> +91 98765 43210
+                </p>
+                <p class="branch-email">
+                    <i class="fas fa-envelope"></i> bangalore@lavishworld.com
+                </p>
+                <div class="branch-tags">
+                    <span class="tag">🏗️ Commercial</span>
+                    <span class="tag">🖥️ Design Studio</span>
+                </div>
+                <button class="branch-btn" onclick="showBranchDetails('Bangalore', 'Commercial Projects Division', 'MG Road, Bangalore - 560001', '+91 98765 43210', 'bangalore@lavishworld.com')">
+                    <i class="fas fa-info-circle"></i> View Details
+                </button>
+            </div>
+        </div>
+
+        <!-- Branch 3: Pune -->
+        <div class="branch-card">
+            <div class="branch-icon">
+                <i class="fas fa-home"></i>
+            </div>
+            <div class="branch-info">
+                <h3><i class="fas fa-map-pin"></i> Pune</h3>
+                <p class="branch-type">🏠 Residential Design Studio</p>
+                <p class="branch-address">
+                    <i class="fas fa-location-dot"></i> Baner Road, Pune - 411045
+                </p>
+                <p class="branch-phone">
+                    <i class="fas fa-phone"></i> +91 91234 56789
+                </p>
+                <p class="branch-email">
+                    <i class="fas fa-envelope"></i> pune@lavishworld.com
+                </p>
+                <div class="branch-tags">
+                    <span class="tag">🏠 Residential</span>
+                    <span class="tag">🎨 Design Studio</span>
+                </div>
+                <button class="branch-btn" onclick="showBranchDetails('Pune', 'Residential Design Studio', 'Baner Road, Pune - 411045', '+91 91234 56789', 'pune@lavishworld.com')">
+                    <i class="fas fa-info-circle"></i> View Details
+                </button>
+            </div>
+        </div>
+
+        <!-- Branch 4: Mumbai -->
+        <div class="branch-card">
+            <div class="branch-icon">
+                <i class="fas fa-hotel"></i>
+            </div>
+            <div class="branch-info">
+                <h3><i class="fas fa-map-pin"></i> Mumbai</h3>
+                <p class="branch-type">🏨 Luxury Projects Division</p>
+                <p class="branch-address">
+                    <i class="fas fa-location-dot"></i> Bandra West, Mumbai - 400050
+                </p>
+                <p class="branch-phone">
+                    <i class="fas fa-phone"></i> +91 99887 66554
+                </p>
+                <p class="branch-email">
+                    <i class="fas fa-envelope"></i> mumbai@lavishworld.com
+                </p>
+                <div class="branch-tags">
+                    <span class="tag">🏨 Luxury</span>
+                    <span class="tag">⭐ Premium</span>
+                </div>
+                <button class="branch-btn" onclick="showBranchDetails('Mumbai', 'Luxury Projects Division', 'Bandra West, Mumbai - 400050', '+91 99887 66554', 'mumbai@lavishworld.com')">
+                    <i class="fas fa-info-circle"></i> View Details
+                </button>
+            </div>
+        </div>
+
+        <!-- Branch 5: Delhi -->
+        <div class="branch-card">
+            <div class="branch-icon">
+                <i class="fas fa-landmark"></i>
+            </div>
+            <div class="branch-info">
+                <h3><i class="fas fa-map-pin"></i> Delhi</h3>
+                <p class="branch-type">🏛️ Corporate & Heritage Projects</p>
+                <p class="branch-address">
+                    <i class="fas fa-location-dot"></i> Connaught Place, Delhi - 110001
+                </p>
+                <p class="branch-phone">
+                    <i class="fas fa-phone"></i> +91 97654 32109
+                </p>
+                <p class="branch-email">
+                    <i class="fas fa-envelope"></i> delhi@lavishworld.com
+                </p>
+                <div class="branch-tags">
+                    <span class="tag">🏛️ Corporate</span>
+                    <span class="tag">🏰 Heritage</span>
+                </div>
+                <button class="branch-btn" onclick="showBranchDetails('Delhi', 'Corporate & Heritage Projects', 'Connaught Place, Delhi - 110001', '+91 97654 32109', 'delhi@lavishworld.com')">
+                    <i class="fas fa-info-circle"></i> View Details
+                </button>
+            </div>
+        </div>
+
+        <!-- Branch 6: Hyderabad -->
+        <div class="branch-card">
+            <div class="branch-icon">
+                <i class="fas fa-palette"></i>
+            </div>
+            <div class="branch-info">
+                <h3><i class="fas fa-map-pin"></i> Hyderabad</h3>
+                <p class="branch-type">🎨 Creative Design Hub</p>
+                <p class="branch-address">
+                    <i class="fas fa-location-dot"></i> Jubilee Hills, Hyderabad - 500033
+                </p>
+                <p class="branch-phone">
+                    <i class="fas fa-phone"></i> +91 96543 21098
+                </p>
+                <p class="branch-email">
+                    <i class="fas fa-envelope"></i> hyderabad@lavishworld.com
+                </p>
+                <div class="branch-tags">
+                    <span class="tag">🎨 Creative</span>
+                    <span class="tag">🖌️ Design Hub</span>
+                </div>
+                <button class="branch-btn" onclick="showBranchDetails('Hyderabad', 'Creative Design Hub', 'Jubilee Hills, Hyderabad - 500033', '+91 96543 21098', 'hyderabad@lavishworld.com')">
+                    <i class="fas fa-info-circle"></i> View Details
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- STATISTICS SECTION -->
+    <div class="stats-section">
+        <div class="stat-item">
+            <i class="fas fa-store"></i>
+            <span class="stat-number" data-target="6">0</span>
+            <span class="stat-label">Branches</span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-city"></i>
+            <span class="stat-number" data-target="5">0</span>
+            <span class="stat-label">Cities</span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-users"></i>
+            <span class="stat-number" data-target="200">0</span>
+            <span class="stat-label">Team Members</span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-project-diagram"></i>
+            <span class="stat-number" data-target="1200">0</span>
+            <span class="stat-label">Projects Completed</span>
+        </div>
+    </div>
+
+    <!-- LOCATION MAP SECTION -->
+    <div class="map-section">
+        <h2>
+            <i class="fas fa-map-location-dot"></i>
+            Find Us On Map
+            <i class="fas fa-map-location-dot"></i>
+        </h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248756.076286479!2d80.0586235686372!3d13.047486459505137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e9b3d4c0c2b3b3b!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Lavish World Branch Locations">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- BRANCH DETAIL MODAL -->
+    <div class="branch-modal" id="branchModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeBranchModal()">&times;</button>
+            <div class="modal-icon">
+                <i class="fas fa-store"></i>
+            </div>
+            <h3 id="modalBranchName">Branch Name</h3>
+            <p class="modal-type" id="modalBranchType">Branch Type</p>
+            <div class="modal-details">
+                <p><i class="fas fa-location-dot"></i> <span id="modalAddress">Address</span></p>
+                <p><i class="fas fa-phone"></i> <span id="modalPhone">Phone</span></p>
+                <p><i class="fas fa-envelope"></i> <span id="modalEmail">Email</span></p>
+            </div>
+            <div class="modal-actions">
+                <a href="#" class="modal-btn" onclick="closeBranchModal()">
+                    <i class="fas fa-times"></i> Close
+                </a>
+                <a href="tel:+919176574702" class="modal-btn primary">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+                <a href="mailto:info@lavishworld.com" class="modal-btn primary">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <hr>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-gem"></i> Lavish World</h4>
+                <p>Transforming spaces into timeless masterpieces since 2011.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="home.html"><i class="fas fa-chevron-right"></i> Home</a>
+                <a href="about.html"><i class="fas fa-chevron-right"></i> About</a>
+                <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+                <a href="branch.html"><i class="fas fa-chevron-right"></i> Branches</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-phone"></i> +91 91765 74702</p>
+                <p><i class="fas fa-envelope"></i> info@lavishworld.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nanganallur, Chennai</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lavish Interior. All Rights Reserved.</p>
+            <p class="tagline">Designed with elegance & luxury ✨</p>
+        </div>
+    </footer>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast">
+        <span class="toast-icon"></span>
+        <span class="toast-message"></span>
+    </div>
+
+    <script src="branch.js"></script>
+</body>
+</html>

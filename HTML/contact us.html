@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavish World - Contact Us</title>
+    <link rel="stylesheet" href="../css/contact.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="breadcrumb">
+            <a href="home.html"><i class="fas fa-home"></i> Home</a>
+            <span><i class="fas fa-chevron-right"></i></span>
+            <a href="contact.html" class="active">Contact Us</a>
+        </div>
+        <div class="theme-toggle">
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+                <span class="theme-text">Dark</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>
+                <i class="fas fa-envelope"></i>
+                Get In Touch
+                <i class="fas fa-envelope"></i>
+            </h1>
+            <p>We'd love to hear from you. Let's create something extraordinary together.</p>
+        </div>
+    </div>
+
+    <!-- CONTENT WRAPPER -->
+    <div class="contact-wrapper">
+
+        <!-- CONTACT INFORMATION -->
+        <div class="contact-info-section">
+            <h2>
+                <i class="fas fa-address-card"></i>
+                Contact Information
+                <i class="fas fa-address-card"></i>
+            </h2>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4>Address</h4>
+                    <p>
+                        No 30/19, 13th Street, BV Nagar,<br>
+                        Nanganallur, Chennai – 600114
+                    </p>
+                    <a href="https://maps.google.com/?q=Nanganallur,Chennai" target="_blank" class="contact-link">
+                        <i class="fas fa-external-link-alt"></i> View on Map
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4>Phone</h4>
+                    <p>
+                        <a href="tel:+919176574702" class="contact-link">+91 91765 74702</a>
+                    </p>
+                    <p>
+                        <a href="tel:+914412345678" class="contact-link">+91 44 1234 5678</a>
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>Email</h4>
+                    <p>
+                        <a href="mailto:sales@lavishomeinteriors.com" class="contact-link">
+                            sales@lavishomeinteriors.com
+                        </a>
+                    </p>
+                    <p>
+                        <a href="mailto:support@lavishomeinteriors.com" class="contact-link">
+                            support@lavishomeinteriors.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h4>Website</h4>
+                    <p>
+                        <a href="https://www.lavishomeinteriors.com" target="_blank" class="contact-link">
+                            www.lavishomeinteriors.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- WORKING HOURS -->
+        <div class="hours-section">
+            <h2>
+                <i class="fas fa-clock"></i>
+                Working Hours
+                <i class="fas fa-clock"></i>
+            </h2>
+            <div class="hours-grid">
+                <div class="hours-card">
+                    <div class="day">Monday - Friday</div>
+                    <div class="time">9:00 AM – 7:00 PM</div>
+                    <div class="status open">
+                        <i class="fas fa-circle"></i> Open Now
+                    </div>
+                </div>
+                <div class="hours-card">
+                    <div class="day">Saturday</div>
+                    <div class="time">10:00 AM – 5:00 PM</div>
+                    <div class="status open">
+                        <i class="fas fa-circle"></i> Open Now
+                    </div>
+                </div>
+                <div class="hours-card">
+                    <div class="day">Sunday</div>
+                    <div class="time">Closed</div>
+                    <div class="status closed">
+                        <i class="fas fa-circle"></i> Closed
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK CONTACT FORM -->
+        <div class="form-section">
+            <h2>
+                <i class="fas fa-paper-plane"></i>
+                Send Us a Message
+                <i class="fas fa-paper-plane"></i>
+            </h2>
+            <form id="contactForm" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">
+                            <i class="fas fa-user"></i> Full Name
+                        </label>
+                        <input type="text" id="fullName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i> Email Address
+                        </label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">
+                        <i class="fas fa-tag"></i> Subject
+                    </label>
+                    <input type="text" id="subject" placeholder="Enter subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">
+                        <i class="fas fa-comment"></i> Message
+                    </label>
+                    <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+
+        <!-- MAP SECTION -->
+        <div class="map-section">
+            <h2>
+                <i class="fas fa-map"></i>
+                Find Us
+                <i class="fas fa-map"></i>
+            </h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps?q=Nanganallur,Chennai&output=embed"
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+                <div class="map-overlay">
+                    <i class="fas fa-map-pin"></i>
+                    <span>Lavish Home Interior</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SOCIAL MEDIA -->
+        <div class="social-section">
+            <h2>
+                <i class="fas fa-share-alt"></i>
+                Connect With Us
+                <i class="fas fa-share-alt"></i>
+            </h2>
+            <div class="social-links">
+                <a href="#" class="social-link facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="#" class="social-link instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="#" class="social-link youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+                <a href="#" class="social-link pinterest">
+                    <i class="fab fa-pinterest-p"></i>
+                    <span>Pinterest</span>
+                </a>
+                <a href="#" class="social-link linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <hr>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-gem"></i> Lavish World</h4>
+                <p>Transforming spaces into timeless masterpieces since 2011.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="home.html"><i class="fas fa-chevron-right"></i> Home</a>
+                <a href="about.html"><i class="fas fa-chevron-right"></i> About</a>
+                <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+                <a href="branch.html"><i class="fas fa-chevron-right"></i> Branches</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-phone"></i> +91 91765 74702</p>
+                <p><i class="fas fa-envelope"></i> sales@lavishomeinteriors.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nanganallur, Chennai</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lavish Interior. All Rights Reserved.</p>
+            <p class="tagline">Designed with elegance & luxury ✨</p>
+        </div>
+    </footer>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast">
+        <span class="toast-icon"></span>
+        <span class="toast-message"></span>
+    </div>
+
+    <script src="contact.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavish World - Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="breadcrumb">
+            <a href="home.html"><i class="fas fa-home"></i> Home</a>
+            <span><i class="fas fa-chevron-right"></i></span>
+            <a href="contact.html" class="active">Contact Us</a>
+        </div>
+        <div class="theme-toggle">
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+                <span class="theme-text">Dark</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>
+                <i class="fas fa-envelope"></i>
+                Get In Touch
+                <i class="fas fa-envelope"></i>
+            </h1>
+            <p>We'd love to hear from you. Let's create something extraordinary together.</p>
+        </div>
+    </div>
+
+    <!-- CONTENT WRAPPER -->
+    <div class="contact-wrapper">
+
+        <!-- CONTACT INFORMATION -->
+        <div class="contact-info-section">
+            <h2>
+                <i class="fas fa-address-card"></i>
+                Contact Information
+                <i class="fas fa-address-card"></i>
+            </h2>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4>Address</h4>
+                    <p>
+                        No 30/19, 13th Street, BV Nagar,<br>
+                        Nanganallur, Chennai – 600114
+                    </p>
+                    <a href="https://maps.google.com/?q=Nanganallur,Chennai" target="_blank" class="contact-link">
+                        <i class="fas fa-external-link-alt"></i> View on Map
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4>Phone</h4>
+                    <p>
+                        <a href="tel:+919176574702" class="contact-link">+91 91765 74702</a>
+                    </p>
+                    <p>
+                        <a href="tel:+914412345678" class="contact-link">+91 44 1234 5678</a>
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>Email</h4>
+                    <p>
+                        <a href="mailto:sales@lavishomeinteriors.com" class="contact-link">
+                            sales@lavishomeinteriors.com
+                        </a>
+                    </p>
+                    <p>
+                        <a href="mailto:support@lavishomeinteriors.com" class="contact-link">
+                            support@lavishomeinteriors.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h4>Website</h4>
+                    <p>
+                        <a href="https://www.lavishomeinteriors.com" target="_blank" class="contact-link">
+                            www.lavishomeinteriors.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- WORKING HOURS -->
+        <div class="hours-section">
+            <h2>
+                <i class="fas fa-clock"></i>
+                Working Hours
+                <i class="fas fa-clock"></i>
+            </h2>
+            <div class="hours-grid">
+                <div class="hours-card">
+                    <div class="day">Monday - Friday</div>
+                    <div class="time">9:00 AM – 7:00 PM</div>
+                    <div class="status open">
+                        <i class="fas fa-circle"></i> Open Now
+                    </div>
+                </div>
+                <div class="hours-card">
+                    <div class="day">Saturday</div>
+                    <div class="time">10:00 AM – 5:00 PM</div>
+                    <div class="status open">
+                        <i class="fas fa-circle"></i> Open Now
+                    </div>
+                </div>
+                <div class="hours-card">
+                    <div class="day">Sunday</div>
+                    <div class="time">Closed</div>
+                    <div class="status closed">
+                        <i class="fas fa-circle"></i> Closed
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK CONTACT FORM -->
+        <div class="form-section">
+            <h2>
+                <i class="fas fa-paper-plane"></i>
+                Send Us a Message
+                <i class="fas fa-paper-plane"></i>
+            </h2>
+            <form id="contactForm" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">
+                            <i class="fas fa-user"></i> Full Name
+                        </label>
+                        <input type="text" id="fullName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i> Email Address
+                        </label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">
+                        <i class="fas fa-tag"></i> Subject
+                    </label>
+                    <input type="text" id="subject" placeholder="Enter subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">
+                        <i class="fas fa-comment"></i> Message
+                    </label>
+                    <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+
+        <!-- MAP SECTION -->
+        <div class="map-section">
+            <h2>
+                <i class="fas fa-map"></i>
+                Find Us
+                <i class="fas fa-map"></i>
+            </h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps?q=Nanganallur,Chennai&output=embed"
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+                <div class="map-overlay">
+                    <i class="fas fa-map-pin"></i>
+                    <span>Lavish Home Interior</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SOCIAL MEDIA -->
+        <div class="social-section">
+            <h2>
+                <i class="fas fa-share-alt"></i>
+                Connect With Us
+                <i class="fas fa-share-alt"></i>
+            </h2>
+            <div class="social-links">
+                <a href="#" class="social-link facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="#" class="social-link instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="#" class="social-link youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+                <a href="#" class="social-link pinterest">
+                    <i class="fab fa-pinterest-p"></i>
+                    <span>Pinterest</span>
+                </a>
+                <a href="#" class="social-link linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <hr>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-gem"></i> Lavish World</h4>
+                <p>Transforming spaces into timeless masterpieces since 2011.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                <a href="about.html"><i class="fas fa-chevron-right"></i> About</a>
+                <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+                <a href="Branch.html"><i class="fas fa-chevron-right"></i> Branches</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-phone"></i> +91 91765 74702</p>
+                <p><i class="fas fa-envelope"></i> sales@lavishomeinteriors.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nanganallur, Chennai</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lavish Interior. All Rights Reserved.</p>
+            <p class="tagline">Designed with elegance & luxury ✨</p>
+        </div>
+    </footer>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast">
+        <span class="toast-icon"></span>
+        <span class="toast-message"></span>
+    </div>
+
+    <script src="contact.js"></script>
+</body>
+</html>

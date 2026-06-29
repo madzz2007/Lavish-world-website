@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavish World - Lights Collection</title>
+    <link rel="stylesheet" href="../css/light.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="breadcrumb">
+            <a href="home.html"><i class="fas fa-home"></i> Home</a>
+            <span><i class="fas fa-chevron-right"></i></span>
+            <a href="light.html" class="active">Lights</a>
+        </div>
+        <div class="theme-toggle">
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+                <span class="theme-text">Dark</span>
+            </button>
+            <button class="cart-btn" aria-label="View cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- HEADING SECTION -->
+    <div class="heading-box">
+        <h1>
+            <i class="fas fa-lightbulb"></i>
+            PREMIUM LIGHTS COLLECTION
+            <i class="fas fa-lightbulb"></i>
+        </h1>
+        <p>Illuminate your space with elegance and luxury</p>
+    </div>
+
+    <!-- PRODUCTS SECTION -->
+    <div class="products-container">
+        <div class="products">
+
+            <div class="item" data-id="1" data-name="Modern 3-Light Chandelier" data-price="12500">
+                <div class="item-image">
+                    <img src="Modern-3-Light.webp" alt="Modern 3-Light Chandelier" loading="lazy">
+                    <div class="item-badge">Best Seller</div>
+                    <div class="item-actions">
+                        <button class="wishlist-btn" aria-label="Add to wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="quick-view-btn" aria-label="Quick view">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-info">
+                    <h3>Modern 3-Light Chandelier</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(4.5)</span>
+                    </div>
+                    <p class="description">Elegant modern design suitable for living rooms and dining spaces with warm illumination.</p>
+                    <div class="price-row">
+                        <span class="price">₹ 12,500</span>
+                        <span class="original-price">₹ 15,500</span>
+                        <span class="discount">19% OFF</span>
+                    </div>
+                    <div class="features">
+                        <span><i class="fas fa-lightbulb"></i> 3 Lights</span>
+                        <span><i class="fas fa-bolt"></i> LED Compatible</span>
+                        <span><i class="fas fa-paint-brush"></i> Premium Finish</span>
+                    </div>
+                    <button class="add-to-cart" data-id="1">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="item" data-id="2" data-name="Classic Single Pendant Light" data-price="14000">
+                <div class="item-image">
+                    <img src="1 light.jpg" alt="Classic Single Pendant Light" loading="lazy">
+                    <div class="item-badge">Premium</div>
+                    <div class="item-actions">
+                        <button class="wishlist-btn" aria-label="Add to wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="quick-view-btn" aria-label="Quick view">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-info">
+                    <h3>Classic Single Pendant Light</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(5.0)</span>
+                    </div>
+                    <p class="description">Simple and stylish light ideal for bedrooms and study rooms with a timeless classic appeal.</p>
+                    <div class="price-row">
+                        <span class="price">₹ 14,000</span>
+                        <span class="original-price">₹ 17,000</span>
+                        <span class="discount">18% OFF</span>
+                    </div>
+                    <div class="features">
+                        <span><i class="fas fa-lightbulb"></i> 1 Light</span>
+                        <span><i class="fas fa-bolt"></i> Energy Efficient</span>
+                        <span><i class="fas fa-paint-brush"></i> Classic Design</span>
+                    </div>
+                    <button class="add-to-cart" data-id="2">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="item" data-id="3" data-name="Luxury 4-Light Ceiling Lamp" data-price="11000">
+                <div class="item-image">
+                    <img src="4 light.jpg" alt="Luxury 4-Light Ceiling Lamp" loading="lazy">
+                    <div class="item-badge">Luxury</div>
+                    <div class="item-actions">
+                        <button class="wishlist-btn" aria-label="Add to wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="quick-view-btn" aria-label="Quick view">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-info">
+                    <h3>Luxury 4-Light Ceiling Lamp</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(4.0)</span>
+                    </div>
+                    <p class="description">Adds warmth and a premium feel to your interior with elegant 4-light ceiling design.</p>
+                    <div class="price-row">
+                        <span class="price">₹ 11,000</span>
+                        <span class="original-price">₹ 13,500</span>
+                        <span class="discount">18% OFF</span>
+                    </div>
+                    <div class="features">
+                        <span><i class="fas fa-lightbulb"></i> 4 Lights</span>
+                        <span><i class="fas fa-bolt"></i> Dimmable</span>
+                        <span><i class="fas fa-paint-brush"></i> Premium Glass</span>
+                    </div>
+                    <button class="add-to-cart" data-id="3">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- WHY CHOOSE US -->
+    <div class="why-choose">
+        <h2><i class="fas fa-crown"></i> Why Choose Lavish Lights?</h2>
+        <div class="benefits">
+            <div class="benefit">
+                <i class="fas fa-lightbulb"></i>
+                <h4>Premium Quality</h4>
+                <p>High-grade materials and craftsmanship</p>
+            </div>
+            <div class="benefit">
+                <i class="fas fa-bolt"></i>
+                <h4>Energy Efficient</h4>
+                <p>LED compatible and power-saving</p>
+            </div>
+            <div class="benefit">
+                <i class="fas fa-check-circle"></i>
+                <h4>Warranty</h4>
+                <p>3 years comprehensive warranty</p>
+            </div>
+            <div class="benefit">
+                <i class="fas fa-truck"></i>
+                <h4>Free Delivery</h4>
+                <p>Pan India free installation</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <hr>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-lightbulb"></i> Lights Collection</h4>
+                <p>Illuminate your space with our premium lighting collection</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="home.html"><i class="fas fa-chevron-right"></i> Home</a>
+                <a href="about.html"><i class="fas fa-chevron-right"></i> About</a>
+                <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lavish Interior. All Rights Reserved.</p>
+            <p class="tagline">Designed with elegance & luxury ✨</p>
+        </div>
+    </footer>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast">
+        <span class="toast-icon"></span>
+        <span class="toast-message"></span>
+    </div>
+
+    <!-- QUICK VIEW MODAL -->
+    <div id="quickViewModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Product">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle">Product Name</h2>
+                    <div class="modal-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(4.5)</span>
+                    </div>
+                    <p id="modalDescription">Product description goes here</p>
+                    <div class="modal-price">
+                        <span id="modalPrice">₹ 12,500</span>
+                        <span id="modalOriginalPrice" class="original-price">₹ 15,500</span>
+                    </div>
+                    <div class="modal-features">
+                        <span><i class="fas fa-lightbulb"></i> 3 Lights</span>
+                        <span><i class="fas fa-bolt"></i> LED Compatible</span>
+                        <span><i class="fas fa-paint-brush"></i> Premium Finish</span>
+                    </div>
+                    <button class="modal-add-to-cart" id="modalAddToCart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="light.js"></script>
+</body>
+</html>
+
